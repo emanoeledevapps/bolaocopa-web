@@ -17,7 +17,7 @@ export default function Home(props: HomeProps) {
     const [poolTitle, setPoolTitle] = useState('');
 
     return (
-        <div className='flex items-center justify-center h-screen'>
+        <div className='flex flex-col items-center justify-center h-auto md:flex-row md:h-screen'>
             <main className='w-[400px]'>
                 <Image 
                     src={Logo} alt='Logo NLW copa' 
@@ -29,9 +29,10 @@ export default function Home(props: HomeProps) {
                 <div className='flex items-center mb-5'>
                     <Image src={AvataresImg} alt=''/>
 
-                    <strong className='text-white font-bold'>
-                        <span className='text-green-600'>+{props.usersCount}</span> pessoas já estão usando
-                    </strong>
+                    <div className='flex items-center gap-1'>
+                        <p className='text-green-600 font-extrabold'>+{String(props.usersCount)}</p>
+                        <p className='text-white font-bold'> pessoas já estão usando!</p>
+                    </div>
                 </div>
 
                 <a href="https://play.google.com/store/apps/details?id=com.emanoeledevapps.bolaocopa" target="_blank">
@@ -57,7 +58,7 @@ export default function Home(props: HomeProps) {
                     <div className='flex items-center gap-2 text-white'>
                         <Image src={IconCheckImg} alt=''/>
                         <div>
-                            <strong className='font-bold text-xl'>+ {props.guessesCount}</strong>
+                            <strong className='font-bold text-xl'>+ {String(props.guessesCount)}</strong>
                             <p className='text-sm'>Palpites enviados</p>
                         </div>
                     </div>
